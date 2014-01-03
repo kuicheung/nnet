@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Record, Replay, and Load Kinect Data - with Skeleton</title>
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+    <link href='cs156_style.css' type='text/css' rel='stylesheet' />
+    <style type="text/css">
+    	.content{
+    		margin-top: 100px;
+    	}
+    	.score-list{
+    		font-size: 24px;
+    	}
+    </style>
+    <script type='text/javascript' src='jquery-1.9.1.min.js'></script>
+    <script type='text/javascript' src='zig.js'></script>
+    <script type='text/javascript' src='record_replay_load_skeleton.js'></script>
+    <script type='text/javascript' src='kungfu_principle_checker.js'></script>
+    <script type='text/javascript' src='ui_record_replay_load.js'></script>
+    <script type='text/javascript' src='record_replay_load_datasaver.js'></script>
+    <script type='text/javascript' src='kungfu.js'></script>
+    <script type='text/javascript' src='camera_bounds_checker.js'></script>
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+	        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	        </button>     
+	        <a class="navbar-brand" style="color:#ffffff" href="#">Virtual Sifu</a>	
+        </div>
+      </div>
+    </div>
+    <div class="container content">
+    <h1>Virtual Sifu</h1>
+    	<div class="col-xs-6">
+		    <!-- The GUI -->
+		    <div class=row>
+			    <div class="col-xs-6" id="record-buttons-container">
+				  <button class="btn btn-danger" id="startButton">Record</button>
+				  <button class="btn btn-primary" id="stopButton">Stop Recording</button>
+				  <button class="btn btn-primary" id="startReplayButton">Replay</button>
+				  <button class="btn btn-primary" id="stopReplayButton">Stop Replay</button>
+				  <button class="btn btn-success" id="startLoadplayButton">Load Replay</button>
+				  <button class="btn btn-primary" id="stopLoadplayButton">Stop Loadplay</button>			  
+			    </div>
+			    <div class="col-xs-6">
+			    	<select class="form-control col-xs-6" id="profile-list">
+			    		<option value="">Select Profile</option>
+			    	</select>
+			    </div>
+		    </div>
+		    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="640" height="480" id='svg-block'>
+		    </svg>
+	    </div>
+	    <div class="col-xs-6 input-div">
+			<form action="" method="get">
+				<textarea class="form-control" id="profile-text" rows="10" placeholder="Place motion profile here and click Load Replay"></textarea>
+				
+			</form>
+			<div>
+				<h1 class="text-center">Scores</h1>
+				<hr/>
+				<div class="row score-list">
+					<div class="col-xs-8 text-right" id="scores-list-left"></div>
+					<div class="col-xs-1"></div>
+					<div class="col-xs-3 text-left" id="scores-list-right"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </body>
+</html>
